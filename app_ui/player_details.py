@@ -6,6 +6,8 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
+from PIL import Image
+from io import BytesIO
 import requests
 
 def plot_statistics():
@@ -87,13 +89,23 @@ show_pages([
 base_url_api = 'https://app-rpisvpygla-ew.a.run.app'
 
 with st.container():
+    r = requests.get('https://tanzolymp.com/images/default-non-user-no-photo-1.jpg')
+    default_img = Image.open(BytesIO(r.content))
+
     cols = st.columns(2)
     with cols[0]:
         st.markdown(""" ### Chosen Player """)
         player_chosen = st.session_state.get('chosen_player')
         container = st.container(border=True)
         container.write(player_chosen['short_name'])
-        container.image(player_chosen['player_face_url'], width=100)
+
+        r = requests.get(player_chosen['player_face_url'])
+        if r.status_code == 200:
+            img = Image.open(BytesIO(r.content))
+        else:
+            img = default_img
+        container.image(img, width=100)
+
         container.write(player_chosen['league_name'])
         container.write(player_chosen['club_name'])
 
@@ -101,7 +113,14 @@ with st.container():
         player_suggested = st.session_state.get('suggested_player')
         container = st.container(border=True)
         container.write(player_suggested['short_name'])
-        container.image(player_suggested['player_face_url'], width=100)
+
+        r = requests.get(player_suggested['player_face_url'])
+        if r.status_code == 200:
+            img = Image.open(BytesIO(r.content))
+        else:
+            img = default_img
+        container.image(img, width=100)
+
         container.write(player_suggested['league_name'])
         container.write(player_suggested['club_name'])
 
