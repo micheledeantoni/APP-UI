@@ -1,6 +1,8 @@
 import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
 from st_pages import Page, show_pages, hide_pages
+from PIL import Image
+from io import BytesIO
 import requests
 
 CSS = '''
@@ -53,13 +55,23 @@ if st.session_state['search_btn'] == True:
             st.warning(''' No Players Found! ''')
         else:
             #st.markdown(""" ### Choose Player """)
+            r = requests.get('https://tanzolymp.com/images/default-non-user-no-photo-1.jpg')
+            default_img = Image.open(BytesIO(r.content))
+
             cols = st.columns(5)
             col_num = 0
             for player in players_search['players']:
                 with cols[col_num]:
                     container = st.container(border=True)
                     container.write(player['short_name'])
-                    container.image(player['player_face_url'], width=150)
+
+                    r = requests.get(player['player_face_url'])
+                    if r.status_code == 200:
+                        img = Image.open(BytesIO(r.content))
+                    else:
+                        img = default_img
+                    container.image(img, width=150)
+
                     container.write(player['league_name'])
                     container.write(player['club_name'])
                     if container.button('Select', key=player['idx'], use_container_width=True):
