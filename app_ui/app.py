@@ -26,7 +26,7 @@ show_pages([
 
 hide_pages(['player_suggestion', 'player_details'])
 
-base_url_api = 'http://127.0.0.1:8000'
+base_url_api = 'https://app-rpisvpygla-ew.a.run.app'
 
 st.markdown(""" # APP - Advanced Player Profiling """)
 

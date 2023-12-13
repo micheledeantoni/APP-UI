@@ -24,7 +24,7 @@ show_pages([
     Page("app_ui/player_details.py","player_details")
 ])
 
-base_url_api = 'http://127.0.0.1:8000'
+base_url_api = 'https://app-rpisvpygla-ew.a.run.app'
 
 with st.container():
     cols = st.columns(2)
