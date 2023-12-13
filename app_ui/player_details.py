@@ -104,7 +104,7 @@ show_pages([
 base_url_api = 'https://app-rpisvpygla-ew.a.run.app'
 
 with st.container():
-  
+
     cols = st.columns([3, 10])
     r = requests.get('https://tanzolymp.com/images/default-non-user-no-photo-1.jpg')
     default_img = Image.open(BytesIO(r.content))
@@ -119,7 +119,7 @@ with st.container():
             img = Image.open(BytesIO(r.content))
         else:
             img = default_img
-        container.image(img, width=100)
+        container.image(img, width=150)
         container.write(player_chosen['league_name'])
         container.write(player_chosen['club_name'])
 
@@ -134,7 +134,7 @@ with st.container():
             img = Image.open(BytesIO(r.content))
         else:
             img = default_img
-        container.image(img, width=100)
+        container.image(img, width=150)
         container.write(player_suggested['league_name'])
         container.write(player_suggested['club_name'])
 
