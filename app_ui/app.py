@@ -64,7 +64,7 @@ if st.session_state['search_btn'] == True:
                     container.write(player['club_name'])
                     if container.button('Select', key=player['idx'], use_container_width=True):
                         st.session_state['search_btn'] = False
-                        st.session_state['choosen_player'] = player
+                        st.session_state['chosen_player'] = player
                         switch_page('player_suggestion')
 
                 col_num = 0 if col_num == 4 else col_num + 1

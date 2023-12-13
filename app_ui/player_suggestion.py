@@ -29,8 +29,8 @@ base_url_api = 'http://127.0.0.1:8000'
 with st.container():
     cols = st.columns(2)
     with cols[0]:
-        st.markdown(""" ### Choosen Player """)
-        player = st.session_state.get('choosen_player')
+        st.markdown(""" ### Chosen Player """)
+        player = st.session_state.get('chosen_player')
         container = st.container(border=True)
         container.write(player['short_name'])
         container.image(player['player_face_url'], width=100)
