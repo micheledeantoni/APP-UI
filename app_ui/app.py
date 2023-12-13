@@ -30,7 +30,7 @@ hide_pages(['player_suggestion', 'player_details'])
 
 base_url_api = 'https://app-rpisvpygla-ew.a.run.app'
 
-st.markdown(""" # APP - Advanced Player Profiling """)
+st.markdown(""" # MatchMaster: Precise Player Profiling """)
 
 st.markdown(""" ### Search Player """)
 
@@ -80,3 +80,38 @@ if st.session_state['search_btn'] == True:
                         switch_page('player_suggestion')
 
                 col_num = 0 if col_num == 4 else col_num + 1
+
+
+st.markdown("""----------------------------------------------------""")
+st.markdown("""----------------------------------------------------""")
+st.markdown("""----------------------------------------------------""")
+
+st.markdown("""
+
+
+
+            ## MatchMaster: Your Ultimate Player Matchmaking App 🌟
+
+Welcome to MatchMaster, the brainchild of a talented team of creators from the LeWagon Data Science bootcamp: **Luiz Felipe dos Santos, Michele Deantoni, Ayanda Ntombela, and Hieu Nguyen**. 👨‍💻🚀
+
+### About Us
+
+We are passionate students exploring the exciting world of data science, and MatchMaster is our innovative project that combines our love for sports and analytics. 📊⚽
+
+### What is MatchMaster?
+
+MatchMaster is not just an app; it's your go-to tool for finding the perfect match in the world of football. Thanks to this app, selecting the ideal player is no longer a daunting task. Whether you're a seasoned manager or a casual fan, MatchMaster has you covered. 📱🔍
+
+### How It Works
+
+Simply choose a player, and MatchMaster will work its magic, displaying the best match possible based on the natural characteristics of the selected player. Our algorithm takes into account various attributes to ensure a comprehensive and accurate match. ✨🔄
+
+#### Filters for Precision
+
+Want a player with a similar wage or age? No problem! MatchMaster allows you to fine-tune your search by applying filters, ensuring that the results align perfectly with your specific needs and preferences. ⚙️🎯
+
+### Acknowledgments
+
+We extend our sincere thanks to **EA Sports** for providing the data foundation for MatchMaster. The app relies on data from FIFA and FC games, creating a robust and realistic database to enhance your player selection experience. 🎮📈
+
+Give MatchMaster a try today, and elevate your football management game to a whole new level! ⚽🚀 """)
