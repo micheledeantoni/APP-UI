@@ -17,7 +17,10 @@ CSS = '''
 }
 [data-testid="collapsedControl"] { display: none }'''
 
-st.set_page_config(initial_sidebar_state="collapsed")
+image = Image.open('MATCHMASTER.jpg')
+st.set_page_config(initial_sidebar_state="collapsed",
+                   page_title="MatchMaster",
+                   page_icon=image)
 st.write(f'<style>{CSS}</style>', unsafe_allow_html=True)
 
 show_pages([
@@ -31,15 +34,11 @@ hide_pages(['player_suggestion', 'player_details'])
 base_url_api = 'https://app-rpisvpygla-ew.a.run.app'
 
 # Display an image from a local file
-image = Image.open('MATCHMASTER.jpg')
+#image = Image.open('MATCHMASTER.jpg')
 
 st.image(image, use_column_width=False, width = 210)
 
 st.markdown(""" # Precise Player Profiling """)
-
-
-
-
 
 st.markdown(""" ### Search Player """)
 
