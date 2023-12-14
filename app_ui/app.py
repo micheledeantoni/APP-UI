@@ -30,11 +30,20 @@ hide_pages(['player_suggestion', 'player_details'])
 
 base_url_api = 'https://app-rpisvpygla-ew.a.run.app'
 
-st.markdown(""" # MatchMaster: Precise Player Profiling """)
+# Display an image from a local file
+image = Image.open('MATCHMASTER.jpg')
+
+st.image(image, use_column_width=False, width = 210)
+
+st.markdown(""" # Precise Player Profiling """)
+
+
+
+
 
 st.markdown(""" ### Search Player """)
 
-player_search = st.text_input('Player Name', '')
+player_search = st.text_input('Enter player last name:', '')
 search_btn = st.button('Search', use_container_width=True)
 
 if st.session_state.get('search_btn') != True:
