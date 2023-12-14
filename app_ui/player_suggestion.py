@@ -17,7 +17,10 @@ CSS = '''
 }
 [data-testid="collapsedControl"] { display: none }'''
 
-st.set_page_config(initial_sidebar_state="collapsed")
+image = Image.open('MATCHMASTER.jpg')
+st.set_page_config(initial_sidebar_state="collapsed",
+                   page_title="MatchMaster",
+                   page_icon=image)
 st.write(f'<style>{CSS}</style>', unsafe_allow_html=True)
 
 show_pages([
