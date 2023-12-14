@@ -148,7 +148,7 @@ with st.container():
         metrics = statistics['metrics']
         aggregated_data = pd.DataFrame(statistics['aggregated_data'])
         st.pyplot(plot_statistics())
-        st.markdown(""" #### -----------------------------------------------------------------------------------""")
+        st.markdown(""" #### """)
         # Show statistics plot for Suggested Player
         st.markdown(""" ### Statistics for Suggested Player """)
         player_index = player_suggested['idx']
