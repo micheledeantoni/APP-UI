@@ -31,7 +31,7 @@ show_pages([
 
 hide_pages(['player_suggestion', 'player_details'])
 
-base_url_api = 'https://app-rpisvpygla-ew.a.run.app'
+base_url_api = 'http://127.0.0.1:8000'
 
 # Display an image from a local file
 #image = Image.open('MATCHMASTER.jpg')

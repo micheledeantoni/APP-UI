@@ -104,7 +104,7 @@ show_pages([
     Page("app_ui/player_details.py","player_details")
 ])
 
-base_url_api = 'https://app-rpisvpygla-ew.a.run.app'
+base_url_api = 'http://127.0.0.1:8000'
 
 with st.container():
 
